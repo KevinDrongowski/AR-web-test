@@ -4,9 +4,23 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs>
-      <a-marker preset="hiro">
-          <a-box position='0 0.5 0' material='color: yellow;'></a-box>
-      </a-marker>
+      
+            <!-- Declare assets for use in the scene. -->
+      <a-assets timeout="1000">
+        <!-- Declare assets here. These are things like images or 3D models. -->
+
+        <!-- Example of how to declare a 3D model asset. -->
+        <a-asset-item id="3DModel-obj" src="start/models/Eng_ring_stone.obj"></a-asset-item preload="auto">
+        <!-- Example of how to declare a skin for a 3D model asset. -->
+        <a-asset-item id="3DModel-mtl" src="start/models/Eng_ring_stone.obj.mtl"></a-asset-item>
+
+      </a-assets>
+      
+      <a-marker-camera preset='custom' type='pattern' url='start/bn-marker.patt'>
+        
+         <a-obj-model id="my3DModel" src="#3DModel-obj" mtl="#3DModel-mtl" position="0 0 0" rotation="0 0 270" scale=".08 .08 .08" material="opacity: 1.0; side:double;"></a-obj-model>
+
+      </a-marker-camera>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
