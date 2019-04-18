@@ -70,8 +70,9 @@
 
       </a-assets>
       <a-marker-camera preset='custom' type='pattern' url='bn-marker.patt'>
+	</a-marker-camera>
       <!-- Create a anchor to attach your augmented reality -->
-      <!--<a-anchor hit-testing-enabled='true'>
+      <a-anchor hit-testing-enabled='true'>
 
         <!-- Add your augmented reality items here -->
 
@@ -111,8 +112,8 @@
 
 				<a-obj-model id="my3DModel" src="#3DModel-obj" mtl="#3DModel-mtl" position="0 0 0" rotation="270 0 0" scale=".08 .08 .08" material="opacity: 1.0; side:double;"></a-obj-model>
 
-      <!--</a-anchor> -->
-</a-marker-camera>
+      </a-anchor>
+
       <!-- Define a static camera -->
       <a-camera-static/>
 
